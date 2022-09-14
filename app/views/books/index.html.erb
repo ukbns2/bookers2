@@ -9,17 +9,20 @@
   <%= f.submit 'Create Book' %>
 <% end %>
 
+<h2>Books</h2>
+
 <table>
  <thead>
   <tr>
    <th></th>
    <th>Title</th>
-   <th>Body</th>
+   <th>Opinion</th>
  </thead>
  <% @books.each do |book| %>
   <tbody>
    <td></td>
-   <td><%= book.title %></td>
+   <td>
+    <%= link_to book.title, book_path(book.id) %></td>
    <td><%= book.body %></td>
   </tbody>
  <% end %>
