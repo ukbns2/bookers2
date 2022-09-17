@@ -12,7 +12,7 @@
 
   <body class ="d-flex flex-column vh-100">
     <header class ="shadow-sm">
-      <nav class ="navbar navbar-expand-lg navbar-light">
+      <nav class ="navbar navbar-expand-lg navbar-dark bg-dark" >
         <div class ="container">
           <a class ="navbar-brand p-3" href="/">Bookers2</a>
           <button class ="navbar-toggler" type ="button" data-toggle ="collapse" data-target ="#navbarNavDropdown" aria-controls ="navbarNavDropdown" aria-expanded ="false" aria-label ="Toggle navigation">
@@ -21,24 +21,30 @@
           <div class ="collapse navbar-collapse" id ="navbarNavDropdown">
             <ul class ="navbar-nav ml-auto">
             <% if user_signed_in? %>
-             <li class ="nav-item">
-               <%= link_to "Home",  book_path(current_user.id) %>
+             <li>
+               <%= link_to "Home",  book_path(current_user.id), class: 'nav-link text-light' %>
              </li>
-             <li class ="nav-item">
-               Users
+             <li>
+               <%= link_to "Users",  "/users", class: 'nav-link text-light' %>
              </li>
-             <li class ="nav-item">
-               <%= link_to "Books", "/books" %>
+             <li>
+               <%= link_to "Books", "/books", class: 'nav-link text-light' %>
              </li>
-             <li class ="nav-item">
-               <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+             <li>
+               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
              </li>
             <% else %>
-             <li class ="nav-item">
-               <%= link_to "新規登録",new_user_registration_path %>
+             <li>
+               <%= link_to "Home", "/", class: 'nav-link text-light' %>
              </li>
-             <li class ="nav-item">
-               <%= link_to "ログイン", new_user_session_path %>
+             <li>
+               <%= link_to "About", "/home/about", class: 'nav-link text-light' %>
+             </li>
+             <li>
+               <%= link_to "Sign up",new_user_registration_path, class: 'nav-link text-light' %>
+             </li>
+             <li>
+               <%= link_to "Log in", new_user_session_path, class: 'nav-link text-light' %>
              </li>
             <% end %>
             </ul>
@@ -51,7 +57,7 @@
     </main>
     <footer>
       <div class ="container mt-5">
-        <div cladd ="row">
+        <div class ="row">
           <div class ="mx-auto">
             <p>CopyRight Infratop.inc</p>
           </div>
