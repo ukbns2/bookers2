@@ -1,18 +1,4 @@
-
-
-<div>
-  <h2>User info</h2>
-  <%= image_tag @user.get_profile_image(100,100) %>
-  <table>
-    <tbody>
-      <tr></tr>
-      <tr>name</tr>
-      <th><%= @user.name %></th>
-      <tr>introduction</tr>
-      <th><%= @user.introduction %></th>
-    </tbody>
-  </table>
-</div>
+<%= render 'user_info', user: current_user %>
 
 <div>
   <h2>New Book</h2>
@@ -25,4 +11,7 @@
     <%= f.submit 'Create Book' %>
   <% end %>
 </div>
+
+
+
 
