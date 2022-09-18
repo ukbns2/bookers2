@@ -19,10 +19,10 @@
      <% end %>
    </div>
 
-<div>
+<div class ="col-md-8 offset-md-1">
  <h2>Users</h2>
 
- <table>
+ <table class ="table">
   <thead>
    <tr>
     <th>image</th>
@@ -30,16 +30,18 @@
     <th colspan ="3"></th>
    </tr>
   </thead>
-
+  <% @users.each do |user| %>
    <tbody>
     <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+     <td><%= image_tag user.get_profile_image("80x80") %></td>
+     <td><%= user.name %></td>
+     <td><%= link_to "Show", user_path(user.id) %></td>
+    </tr>
+
    </tbody>
+  <% end %>
 
  </table>
 </div>
-
 
 
